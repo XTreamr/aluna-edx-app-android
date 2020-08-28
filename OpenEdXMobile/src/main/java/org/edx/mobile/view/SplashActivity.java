@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 import org.edx.mobile.base.MainApplication;
 import org.edx.mobile.core.IEdxEnvironment;
 import org.edx.mobile.deeplink.BranchLinkManager;
@@ -22,7 +26,8 @@ public class SplashActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        AppCenter.start(getApplication(), "ac288677-3411-4abd-b22d-7fce41f881ff",
+                Analytics.class, Crashes.class);
         /*
         Recommended solution to avoid opening of multiple tasks of our app's launcher activity.
         For more info:
