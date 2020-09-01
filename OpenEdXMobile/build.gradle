@@ -22,9 +22,9 @@ buildscript {
 }
 
 apply plugin: 'edxapp'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'jacoco-android'
 edx {
     platform = ANDROID
