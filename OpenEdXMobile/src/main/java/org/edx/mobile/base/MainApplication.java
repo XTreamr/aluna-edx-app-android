@@ -26,6 +26,7 @@ import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.newrelic.agent.android.NewRelic;
 
 import org.edx.mobile.BuildConfig;
+import org.edx.mobile.GoLauncher;
 import org.edx.mobile.R;
 import org.edx.mobile.core.EdxDefaultModule;
 import org.edx.mobile.core.IEdxEnvironment;
@@ -178,6 +179,8 @@ public abstract class MainApplication extends MultiDexApplication {
         if (PermissionsUtil.checkPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, this)) {
             deleteExtraDownloadedFiles();
         }
+
+        initGo();
     }
 
     private void checkIfAppVersionUpgraded(Context context) {
@@ -262,5 +265,9 @@ public abstract class MainApplication extends MultiDexApplication {
                 }
             }
         }).start();
+    }
+
+    private void initGo() {
+        GoLauncher.INSTANCE.init(this);
     }
 }

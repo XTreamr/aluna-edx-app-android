@@ -2,20 +2,20 @@ package org.edx.mobile.view;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.bumptech.glide.Glide;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
+import org.edx.mobile.GoLauncher;
 import org.edx.mobile.R;
 import org.edx.mobile.event.AccountDataLoadedEvent;
 import org.edx.mobile.event.DiscoveryTabSelectedEvent;
@@ -94,6 +94,11 @@ public class MainTabsDashboardFragment extends TabsBaseFragment {
                 environment.getRouter().showAccountActivity(getActivity());
                 return true;
             }
+
+            case R.id.menu_go_vicdeo: {
+                GoLauncher.INSTANCE.start(requireActivity());
+            }
+
             default: {
                 return super.onOptionsItemSelected(item);
             }

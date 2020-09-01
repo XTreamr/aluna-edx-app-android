@@ -5,4 +5,9 @@
         android:id="@+id/menu_item_account"
         android:title="@string/title_account"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_go_vicdeo"
+        android:title="GO Video"
+        app:showAsAction="always" />
 </menu>
