@@ -269,11 +269,12 @@ dependencies {
 
     implementation("com.google.guava:guava:29.0-android")
 
-    implementation "live.govideo:auth:0.4.8"
-    implementation "live.govideo:onboarding:0.4.8"
-    implementation "live.govideo:permissions:0.4.8"
-    implementation "live.govideo:videos:0.4.8"
-    implementation "live.govideo:tracking:0.4.8"
+    implementation(platform("live.govideo:bom:0.4.8"))
+    implementation "live.govideo:auth"
+    implementation "live.govideo:onboarding"
+    implementation "live.govideo:permissions"
+    implementation "live.govideo:videos"
+    implementation "live.govideo:tracking"
 }
 
 configurations {
