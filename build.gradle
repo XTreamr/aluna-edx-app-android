@@ -1,9 +1,18 @@
 allprojects {
+    project.apply from: "${rootDir}/credentials.gradle"
+
     repositories {
         // The order in which you list these repositories matter.
         google()
         jcenter()
-        maven { url 'https://maven.google.com' }
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/XTreamr/android_library_go")
+            credentials {
+                username = "$gprUser"
+                password = "$gprApiKey"
+            }
+        }
         maven { url 'https://jitpack.io' }
     }
     project.apply from: "${rootDir}/constants.gradle"
